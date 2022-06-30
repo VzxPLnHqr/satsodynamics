@@ -59,3 +59,4 @@ This project takes inspiration from, and is thankful to:
 ....
 
 ## References
+[1] PoW as "Gravity" - https://medium.com/@laurentmt/gravity-10e1a25d2ab2
