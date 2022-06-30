@@ -43,6 +43,10 @@ of the system. This particular treatment may not be justified, and it may be mor
 realistic to simply also release the fees as heat. As stated above, there are a
 number of different ways to perform thermodynamic analysis of this system.
 
+##### Alternative treatments of fees
+* Ignore them and just release the full amount of heat associated with them.
+* Transfer the energy associated with fees over to the coinbase outputs.
+
 ## Status
 * Pre-proof-of-concept (aka probably broken).
 
