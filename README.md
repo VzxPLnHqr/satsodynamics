@@ -2,7 +2,7 @@
 Can we make quasi-classical thermodyanmic observations of the bitcoin network by
 measuring the inflow/outflow of Heat (Q) and Work (W)? Can we do it from first
 principles? Is the information gleaned useful at all? This project aims to answer
-that question!
+these questions!
 
 Your thoughtful contributions are most welcome!
 
@@ -19,6 +19,23 @@ energy. We can accomplish this by re-interpreting the proof-of-work (PoW) inform
 which is included in valid bitcoin blocks. There are multiple such interpretations,
 but here is one that we will start with:
 
+## Proof of Work is Global and Cumulative
+The idea illustrated briefly in [1] is similar to what we are envisioning here.
+Specifically, when a new block is mined, we want the effect to be such that the
+security provided by the PoW is applied to all existing UTXOs instantly and in 
+a fashion such that older UTXOs effectively receive "more" than younger UTXOs 
+(this is what ensures that it is more difficult for miners to rewrite an older 
+transaction than a younger transaction. 
+
+Implementing what is contemplated in [1] pre-supposes the notion of "blocks" and 
+uses the "age" of a utxo in blocks (in blocks) as a means for tracking the accumulated PoW
+to a UTXO. Here, on the other hand, we are trying to take a different approach
+and keep the thermodynamic accounting at the per-transaction level as much as
+possible. If succuessful, the thought is that the approach(es) here might be more
+scalable and implementable since they rely less on global state.
+
+### 1. A Naive Implementation
+
 #### Mining = Work In, Spending = Heat Out.
 
 1. When a valid bitcoin block, with work requirement `W` is mined, we treat this 
@@ -34,6 +51,13 @@ but here is one that we will start with:
 4. When a UTXO with internal energy `u` is spent, we consider the system as releasing
    an amount `u` of heat.
 
+##### What about empty blocks with no outputs?
+This naive approach allocates work directly to the outputs for transactions within
+a block. However, in the event that a block has no outputs whatsoever, then there
+is no way to actually allocate the work, and it is released as heat. This is
+unsatisfactory, since this completely discounts any additional security that an
+empty block confers on the state of the system (the UTXO set).
+
 #### Transaction fees as accumulated internal energy
 What about transaction fees? There are a number of ways we can handle transaction
 fees. Here we opt to treat transaction fees as accumulated/retained work by the
@@ -45,7 +69,7 @@ number of different ways to perform thermodynamic analysis of this system.
 
 ##### Alternative treatments of fees
 * Ignore them and just release the full amount of heat associated with them.
-* Transfer the energy associated with fees over to the coinbase outputs.
+* Transfer the internal energy associated with fees over to the coinbase outputs.
 
 ## Status
 * Pre-proof-of-concept (aka probably broken).
