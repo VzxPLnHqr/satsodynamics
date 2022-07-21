@@ -91,5 +91,6 @@ This project takes inspiration from, and is thankful to:
 [1] PoW as "Gravity" - https://medium.com/@laurentmt/gravity-10e1a25d2ab2
 
 ### General (Thermodynamics / Information-theory / Mathematics)
-[2] John Baez, Mike Stay - Algorithmic thermodynamics, circa 2010-2013, [pdf](http://math.ucr.edu/home/baez/thermo.pdf), [blog post](http://golem.ph.utexas.edu/category/2010/02/algorithmic_thermodynamics.html)
+[2] E.T. Jaynes - Information Theory and Statistical Mechanics, 1957 - One of Jaynes earliest papers. The framework of statistical mechanics is shown to be useful for statistical inference in general, possibly even for non-physical systems/processes.
+[3] John Baez, Mike Stay - Algorithmic thermodynamics, circa 2010-2013, [pdf](http://math.ucr.edu/home/baez/thermo.pdf), [blog post](http://golem.ph.utexas.edu/category/2010/02/algorithmic_thermodynamics.html)
     The model described here is "interesting" but not very similar to what we are contemplating in this project. Nevertheless, the methodology around how it might look to formalize something like this, along with the list of references, is quite helpful. 
